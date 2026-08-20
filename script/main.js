@@ -295,18 +295,28 @@ document.querySelectorAll("input[type='number']").forEach((input) => {
   });
 });
 
-// --- Theme Switcher ---
+// --- Theme Switcher & Dynamic Icon ---
 const themeBtn = document.querySelector("#theme-toggle");
-const isDark = localStorage.getItem("theme") === "dark";
+const favicon = document.querySelector("link[rel='icon']");
 
-document.body.classList.toggle("dark", isDark);
-document.body.classList.toggle("light", !isDark);
-
+function updateThemeUI(isDark) {
+  document.body.classList.toggle("dark", isDark);
+  document.body.classList.toggle("light", !isDark);
+  if (favicon) {
+    favicon.href = isDark ? "imgs/Dark.png" : "./imgs/Light.png";
+  }
+  if (themeBtn) {
+    themeBtn.classList.toggle("fa-sun", isDark);
+    themeBtn.classList.toggle("fa-moon", !isDark);
+  }
+}
+const storedTheme = localStorage.getItem("theme");
+const isDarkInitial = storedTheme === "dark";
+updateThemeUI(isDarkInitial);
 if (themeBtn) {
   themeBtn.addEventListener("click", () => {
-    const currentIsDark = document.body.classList.contains("dark");
-    document.body.classList.toggle("dark", !currentIsDark);
-    document.body.classList.toggle("light", currentIsDark);
-    localStorage.setItem("theme", currentIsDark ? "light" : "dark");
+    const isNowDark = !document.body.classList.contains("dark");
+    localStorage.setItem("theme", isNowDark ? "dark" : "light");
+    updateThemeUI(isNowDark);
   });
 }
