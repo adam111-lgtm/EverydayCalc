@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>title</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style/css/style.css" />
+    <link rel="icon" href="imgs/Logo.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css"
+    />
+  </head>
+  <body class="light">
+    <header>
+      <h2 class="title"><a href="#"></a></h2>
+      <nav>
+        <ul>
+          <li><i class="fa-solid fa-bars menu-btn"></i></li>
+          <li><a href="#Normal">normal</a></li>
+          <li><a href="#Discount">Discounts</a></li>
+          <li><a href="#Bill">Bill Split</a></li>
+          <li><a href="#Time">Time & Dates</a></li>
+          <li><a href="#Scaling">Recipe Scaling</a></li>
+          <li><a href="#Percntage">% Change</a></li>
+          <li>
+            <i class="fa-solid fa-moon theme-toggle-btn" id="theme-toggle"></i>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div id="Normal" class="normal section">
+        <div class="calculter">
+          <output class="num-screen"></output>
+          <div class="btns">
+            <div class="nums">
+              <span class="double-zero">00</span>
+              <span class="dot">.</span>
+            </div>
+            <div class="symbols">
+              <span class="symbol">+</span><span class="symbol">-</span
+              ><span class="symbol">÷</span><span class="symbol">x</span
+              ><span class="symbol"
+                ><i class="fa-solid fa-delete-left"></i></span
+              ><span class="symbol">=</span><span>c</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="Discount" class="discount section">
+        <div class="form">
+          <input
+            type="number"
+            name="price"
+            min="1"
+            placeholder="Price Without Discount"
+          />
+          <input
+            type="number"
+            name="discount"
+            min="1"
+            placeholder="Discount Percent (%)"
+          />
+          <button>calc</button>
+          <h3>Result</h3>
+          <span
+            ><span class="value"></span><i class="fa-regular fa-copy"></i
+          ></span>
+        </div>
+      </div>
+      <div class="copied">copied!</div>
+      <div id="Bill" class="section bill">
+        <div class="bill-box">
+          <input min="1" type="number" placeholder="Please Enter Total Bill" />
+          <input
+            min="1"
+            type="number"
+            placeholder="Please Enter Number Of People"
+          />
+          <input
+            min="1"
+            type="number"
+            placeholder="Please Enter Tip Percntage (%)"
+          />
+          <button>calc</button>
+          <h3>Result</h3>
+          <span class="result1"
+            ><span class="result1-con"></span><i class="fa-regular fa-copy"></i
+          ></span>
+          <span class="result2"
+            ><span class="result2-con"></span><i class="fa-regular fa-copy"></i
+          ></span>
+          <span class="result3"
+            ><span class="result3-con"></span><i class="fa-regular fa-copy"></i
+          ></span>
+          <span class="result4"
+            ><span class="result4-con"></span><i class="fa-regular fa-copy"></i
+          ></span>
+        </div>
+      </div>
+      <div id="Time" class="section time">
+        <div class="time_calc">
+          <input type="text" id="start-date" placeholder="Choose Date" />
+          <input type="text" id="end-date" placeholder="Choose Date" />
+          <button>calc</button>
+          <h3>Result</h3>
+          <span><span></span><i class="fa-regular fa-copy"></i></span>
+        </div>
+      </div>
+      <div id="Scaling" class="section scaling">
+        <div class="resize">
+          <input
+            type="number"
+            min="1"
+            placeholder="Please Enter Original Servings"
+            name="or-serving"
+          />
+          <input
+            type="number"
+            min="1"
+            placeholder="Please Enter Original Quantities"
+            name="or-quantity"
+          />
+          <input
+            type="number"
+            min="1"
+            placeholder="Please Enter Target Servings"
+            name="tr-serving"
+          />
+          <button>calc</button>
+          <h3>Result</h3>
+          <span class="scaling-factor"
+            ><span></span><i class="fa-regular fa-copy"></i
+          ></span>
+          <span class="scaled-quantities"
+            ><span></span><i class="fa-regular fa-copy"></i
+          ></span>
+        </div>
+      </div>
+      <div id="Percntage" class="section percntage">
+        <div class="percntage_calc">
+          <input
+            min="1"
+            type="number"
+            placeholder="Please Enter Old Value"
+            name="old-value"
+          />
+          <input
+            min="1"
+            type="number"
+            placeholder="Please Enter New Value"
+            name="new-value"
+          />
+          <button>calc</button>
+          <h3>Result</h3>
+          <span class="percentage-change"
+            ><span></span><i class="fa-regular fa-copy"></i
+          ></span>
+          <span class="change-type"
+            ><span></span><i class="fa-regular fa-copy"></i
+          ></span>
+        </div>
+      </div>
+    </main>
+    <footer>All Rights Return To Adam Masoud <span></span>©</footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="script/main.js"></script>
+  </body>
+</html>
